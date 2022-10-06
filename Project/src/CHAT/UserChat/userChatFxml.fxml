@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="572.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CHAT.UserChat.userChatController">
+    <children>
+        <SplitPane dividerPositions="0.21052631578947367" orientation="VERTICAL" prefHeight="572.0" prefWidth="655.0" style="-fx-background-color: #00334d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="653.0" style="-fx-background-color: #00334d;">
+                    <children>
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="59.0" style="-fx-background-color: #00334d;" />
+                        <FontAwesomeIconView fill="#fcf9f9" glyphName="LIST" layoutX="31.0" layoutY="42.0" size="25" />
+                        <TextField layoutX="6.0" layoutY="66.0" prefHeight="27.0" prefWidth="190.0" promptText="    search " style="-fx-background-color: #00334d;" />
+                        <HBox fx:id="hBoxTopId" layoutX="498.0" layoutY="85.0" prefHeight="30.0" prefWidth="154.0" spacing="30.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#onTextMessageWindowButtonClick" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #005580;">
+                                    <graphic>
+                                        <MaterialDesignIconView fill="WHITE" glyphName="COMMENT_MULTIPLE_OUTLINE" size="20" />
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="66.0" layoutY="10.0" mnemonicParsing="false" onAction="#onFileButtonClicked" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #005580;">
+                                    <graphic>
+                                        <MaterialDesignIconView fill="WHITE" glyphName="DATABASE" size="20" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Text fx:id="noticeId" fill="#eeeaea" layoutX="256.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select A Chat to Start" wrappingWidth="257.0000052303076">
+                            <font>
+                                <Font name="Andale Mono" size="19.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="headerTextId" fill="#f8f7f7" layoutX="221.0" layoutY="72.0" onMouseClicked="#onSectionAClicked" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="309.9999984353781">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Text>
+                  <Button layoutX="606.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: #00334d;">
+                     <graphic>
+                        <MaterialDesignIconView fill="#fffdfd" glyphName="POWER" size="25" />
+                     </graphic>
+                  </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                  <Pane layoutX="200.0" prefHeight="452.0" prefWidth="453.0" style="-fx-background-color: #00394d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="404.0" prefWidth="453.0" style="-fx-background-color: #003366;" vbarPolicy="NEVER">
+                           <content>
+                                      <VBox fx:id="vBoxId" alignment="BOTTOM_RIGHT" onKeyPressed="#keyEvent" prefHeight="402.0" prefWidth="453.0" style="-fx-background-color: #00394d;">
+                                 <children>
+                                    <Pane fx:id="paneOverVBox" prefHeight="407.0" prefWidth="453.0">
+                                       <children>
+                                          <FlowPane fx:id="flowPaneId" prefHeight="404.0" prefWidth="453.0" />
+                                          <VBox fx:id="vBoxGradeReportId" alignment="TOP_CENTER" prefHeight="404.0" prefWidth="453.0" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </content>
+                              </ScrollPane>
+                        <HBox fx:id="hBoxDownId" alignment="CENTER" layoutX="-2.0" layoutY="404.0" prefHeight="42.0" prefWidth="453.0" spacing="10.0" style="-fx-background-color: #00334d;">
+                           <children>
+                              <Button fx:id="fileBrowseButton" mnemonicParsing="false" onAction="#fileBrowseButton" style="-fx-background-color: #00334d;">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#fffefe" glyphName="SHEQEL" rotate="-90.0" size="20" />
+                                 </graphic>
+                              </Button>
+                              <TextField fx:id="textFieldId" prefHeight="27.0" prefWidth="382.0" promptText="Write your text message here..." />
+                              <Button fx:id="sendButtonId" alignment="CENTER" lineSpacing="50.0" mnemonicParsing="false" onAction="#onSendButtonClicked" prefHeight="28.0" prefWidth="48.0" style="-fx-background-color: #00334d;">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#3169e1" glyphName="LOCATION_ARROW" rotate="41.8" size="25" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="gradeReportHBox" prefHeight="404.0" prefWidth="453.0">
+                           <children>
+                              <VBox fx:id="leftVBoxDescription" alignment="TOP_CENTER" prefHeight="404.0" prefWidth="301.0" spacing="20.0">
+                                 <children>
+                                    <Text fx:id="yourResultTextId" fill="#f2e6e6" strokeType="OUTSIDE" strokeWidth="0.0" text="       Your Result" wrappingWidth="301.21875">
+                                       <font>
+                                          <Font name="Abyssinica SIL" size="26.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="rightVBoxResult" alignment="TOP_CENTER" prefHeight="404.0" prefWidth="152.0" spacing="20.0">
+                                 <children>
+                                    <Text fx:id="rightResultId" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.21875">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="446.0" prefWidth="201.0">
+                     <children>
+                              <VBox prefHeight="446.0" prefWidth="201.0" spacing="20.0">
+                                  <children>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#publicChatButtonClicked" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #005580;" text="Public Chat" textFill="#fff9f9">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#f5eded" glyphName="ACCOUNT_MULTIPLE" size="20" />
+                                 </graphic>
+                              </Button>
+                                      <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#privateChatButtonClicked" prefHeight="56.0" prefWidth="200.0" style="-fx-background-color: #005580;" text="Private Chat" textFill="#fff9f9">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                          <graphic>
+                                              <MaterialDesignIconView fill="#f5eded" glyphName="ACCOUNT" size="20" />
+                                          </graphic>
+                                      </Button>
+                                      <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onGradeReportButtonClick" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #005580;" text="Grade Report" textFill="#fcf3f3">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                          <graphic>
+                                              <MaterialDesignIconView fill="#e4dfdf" glyphName="RECEIPT" size="20" />
+                                          </graphic>
+                                      </Button>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="162.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #005580;" text="About Instrcutor" textFill="#fcf3f3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#f5eeee" glyphName="FORMAT_COLOR_TEXT" size="20.0" />
+                                 </graphic>
+                              </Button>
+                                  </children>
+                              </VBox>
+                     </children>
+                  </Pane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

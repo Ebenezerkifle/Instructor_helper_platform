@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPaneId" prefHeight="572.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CHAT.ChatController">
+    <children>
+        <SplitPane dividerPositions="0.21052631578947367" orientation="VERTICAL" prefHeight="572.0" prefWidth="655.0" style="-fx-background-color: #00334d;">
+            <items>
+                <AnchorPane fx:id="anchorPaneUp" minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="653.0" style="-fx-background-color: #00334d;">
+                    <children>
+                        <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onOptionsButtonClicked" prefHeight="36.0" prefWidth="44.0" style="-fx-background-color: #00334d;" />
+                        <TextField layoutX="155.0" layoutY="23.0" prefHeight="19.0" prefWidth="154.0" promptText="    search " style="-fx-background-color: #005580;" />
+                        <HBox fx:id="hBox" layoutX="232.0" layoutY="89.0" prefHeight="30.0" prefWidth="154.0" spacing="30.0">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #005580;">
+                                    <graphic>
+                                        <MaterialDesignIconView fill="WHITE" glyphName="COMMENT_MULTIPLE_OUTLINE" size="20" />
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="dataBase" layoutX="66.0" layoutY="10.0" mnemonicParsing="false" onAction="#onFileButtonClicked" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #00334d;">
+                                    <graphic>
+                                        <MaterialDesignIconView fill="WHITE" glyphName="DATABASE" size="20" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Text fx:id="headerTextId" fill="#eeeaea" layoutX="338.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" wrappingWidth="154.00000233203173">
+                            <font>
+                                <Font name="SignPainter-HouseScript" size="34.0" />
+                            </font>
+                        </Text>
+                  <Text fx:id="groupHeaderTextId" fill="#f8f7f7" layoutX="309.0" layoutY="72.0" onMouseClicked="#onSectionAClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Electrical Section A" underline="true" wrappingWidth="174.99999843537807">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="TypeOfChatTextId" fill="#f8f3f3" layoutX="52.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group Chat" wrappingWidth="165.21875">
+                     <font>
+                        <Font name="SignPainter-HouseScript" size="41.0" />
+                     </font>
+                  </Text>
+                  <StackPane alignment="TOP_CENTER" layoutX="3.0" layoutY="2.0" prefHeight="68.0" prefWidth="99.0">
+                     <children>
+                      <Button fx:id="backArrow" minWidth="49.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="37.0" style="-fx-background-color: #00334d;" textFill="#f8f4f4">
+                           <graphic>
+                              <FontAwesomeIconView fill="#fff4f4" glyphName="LONG_ARROW_LEFT" size="25" text="" wrappingWidth="27.999999225139618" />
+                           </graphic>
+                        </Button>
+                        <ButtonBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="73.0" prefWidth="99.0" StackPane.alignment="TOP_LEFT">
+                           <buttons>
+                              <Button fx:id="optionId" alignment="CENTER" minWidth="59.0" mnemonicParsing="false" onAction="#onOptionsButtonClicked" prefHeight="35.0" prefWidth="30.0" style="-fx-background-color: #00334d;">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#f5f0f0" glyphName="NAVICON" size="25" />
+                                 </graphic>
+                              </Button>
+                           </buttons>
+                        </ButtonBar>
+                     </children>
+                  </StackPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="anchorPaneDown" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <ScrollPane fx:id="scrollPaneID" hbarPolicy="NEVER" layoutX="229.0" layoutY="-1.0" prefHeight="450.0" prefWidth="424.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <content>
+                                <VBox fx:id="vBoxId" alignment="BOTTOM_RIGHT" prefHeight="386.0" prefWidth="408.0" />
+                            </content>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" layoutX="229.0" layoutY="420.0" prefHeight="43.0" prefWidth="424.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <TextField fx:id="textMessage" onKeyPressed="#keyEvent" prefHeight="28.0" prefWidth="361.0" promptText="write your text here..." />
+                                <Button mnemonicParsing="false" onAction="#onSendButtonClick" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #ffffff;">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="#315094" glyphName="LOCATION_ARROW" rotate="47.7" size="25" wrappingWidth="19.64285659790039" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <VBox fx:id="vBoxCorner" prefHeight="446.0" prefWidth="44.0" spacing="20.0">
+                            <children>
+                                <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="51.0" prefWidth="46.0" style="-fx-background-color: #004466;" textFill="#f8f3f3">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <graphic>
+                                        <MaterialDesignIconView fill="#fcf6f9" glyphName="ACCOUNT_MULTIPLE" size="20" />
+                                    </graphic>
+                                </Button>
+                                <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onOptionsButtonClicked" prefHeight="51.0" prefWidth="46.0" style="-fx-background-color: #00334d;" textFill="#fff9f9">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <graphic>
+                                        <MaterialDesignIconView fill="#f5eded" glyphName="ACCOUNT" size="20" />
+                                    </graphic>
+                                </Button>
+                                <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="51.0" prefWidth="45.0" style="-fx-background-color: #00334d;" textFill="#fcf3f3">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <graphic>
+                                        <MaterialDesignIconView fill="#e4dfdf" glyphName="RECEIPT" size="20" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                  <VBox fx:id="vBoxTwo" alignment="TOP_CENTER" layoutX="42.0" prefHeight="446.0" prefWidth="188.0" spacing="20.0" style="-fx-background-color: #004466;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="423.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                                <Button fx:id="A" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" style="-fx-background-color: #0080ff;" text="Electrical Section A" />
+                        <Button fx:id="B" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" style="-fx-background-color: #66b3ff;" text="Electrical Section B" />
+                                <Button fx:id="C" mnemonicParsing="false" onAction="#onSectionBClick" prefHeight="30.0" prefWidth="175.0" style="-fx-background-color: #66b3ff;" text="Electrical Section B" />
+                     </children>
+                  </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
